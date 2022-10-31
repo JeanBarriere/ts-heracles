@@ -1,0 +1,20 @@
+{
+  "name": "ts-heracles",
+  "version": "1.0.0",
+  "description": "Typescript project to test things",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@ssh.github.com:443/JeanBarriere/ts-heracles.git"
+  },
+  "author": "Jean Barriere <jean@barriere.io>",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^4.8.4"
+  }
+}
