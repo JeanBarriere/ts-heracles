@@ -1,1 +1,3 @@
-console.log('hello from ts-heracles')
+export function add(left: number, right: number): number {
+    return left + right
+}
