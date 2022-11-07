@@ -13,7 +13,8 @@ import { MySet } from "./set"
 
 // 8. You can use the delete() method to remove a value from the set
 // 9. You can use the clear() method to clear all values from the set
-// 10. You can have any type as a value in a Set
+
+// BONUS: 10. You can have "any type" as a value in a Set
 
 describe("a Set", () => {
     it("is instantiated", () => {
