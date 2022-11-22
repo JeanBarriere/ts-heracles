@@ -78,4 +78,90 @@ describe("a Set", () => {
         // assert
         expect(result).toEqual(expectedResult)
     })
+
+    it('use the add() method to insert a value in the set ', () => {
+        //prepare
+        const initialValues = [1, 3, 5, 7, 9, 11]
+        
+    
+        //execute 
+        const mySet = new MySet(initialValues);
+        
+        expect(mySet.size).toEqual(6)
+        expect(mySet.has(13)).toBeFalsy()
+        //assert
+        mySet.add(13)
+        mySet.add(13)
+
+        expect(mySet.has(13)).toBeTruthy()
+
+        expect(mySet.size).toEqual(7)
+    })
+    it('delete() method to remove a value from the set', () => {
+        //prepare 
+        const initialValues = [1, 3, 5, 7, 9, 11]
+
+        //execute 
+        const mySet =  new MySet(initialValues);
+
+        expect(mySet.size).toEqual(6)
+        expect(mySet.has(9)).toBeTruthy()
+
+        mySet.delete(9)
+
+        expect(mySet.has(9)).toBeFalsy()
+        
+    })
+    it ('clear() method to clear all values from the set', () => {
+        
+        //prepare 
+        const initialValues = [1, 3, 5, 7, 9, 11]
+    
+        //execute 
+        const mySet =  new MySet(initialValues);
+    
+        expect(mySet.size).toEqual(6)
+    
+        mySet.clear()
+        expect(mySet.size).toEqual(0)
+    })
+
+    it('can create a Set with string values', () => {
+        // prepare
+        const initialValues = ['hello', 'world'];
+
+        // execute
+        // Argument of type 'string[]' is not assignable to parameter of type 'number[]'.
+        const mySet = new MySet(initialValues);
+
+        // assert
+        expect(mySet).toBeDefined();
+    })
+
+    type Image = `${string}.png`;
+
+    it('only inserts values of the same type in the Set', () => {
+    // prepare
+        const initialValues: Array<Image> = ['hello.png', 'world.png'];
+
+        // execute
+        // Argument of type 'string[]' is not assignable to parameter of type 'number[]'.
+        const mySet = new MySet<Image>(initialValues);
+
+        // should error
+        // mySet.add(2);
+
+        // mySet.add(12341581341);
+
+        mySet.clear();
+
+        mySet.add('hello.png');
+
+        mySet.add('Karolina.png')
+
+        // mySet.add(1);
+
+        // assert
+        expect(mySet.size).toBe(2);
+    })
 })
